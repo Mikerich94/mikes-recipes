@@ -11,7 +11,7 @@ export default function RecipeCard({ recipe }) {
              src={`https:${thumbnail.fields.file.url}`}
              width={thumbnail.fields.file.details.image.width}
              height={thumbnail.fields.file.details.image.height}
-             style={{ objectFit: 'cover', borderRadius:'20px', maxWidth: '500px', width: '100%', height: 'auto', maxHeight: '375px' }}
+             style={{ objectFit: 'cover', borderRadius:'20px', maxWidth: '500px', width: '100%', height: '375px', maxHeight: '375px' }}
   alt="Thumbnail"
              />
             </div> 
