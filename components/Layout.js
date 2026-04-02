@@ -5,13 +5,11 @@ export default function Layout({ children }) {
     <div className="layout">
       <header>
         <Link href="/">
-          <a>
             <h1>
-              <span>Just Add</span>
-              <span>Marmite</span>
+              <span>Mike's</span>
+              <span>Recipes</span>
             </h1>
-            <h2>Spread The Joy</h2>
-          </a>
+            <h2>Simple, delicious, easy.</h2>
         </Link>
       </header>
 
@@ -20,7 +18,7 @@ export default function Layout({ children }) {
       </div>
 
       <footer>
-        <p>Copyright 2021 Just Add Marmite :)</p>
+        <p>Copyright 2026</p>
       </footer>
     </div>
   )
