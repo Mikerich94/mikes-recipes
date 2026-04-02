@@ -29,7 +29,16 @@ export default function Recipes({ recipes }) {
       display:grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px 60px;
+    }
+         @media (max-width:768px) {
+        .recipe-list {
+          grid-template-columns: 1fr;
+    gap: 20px; 
+    }
+    }
+    
     `}
+
       </style>
     </div>
   )

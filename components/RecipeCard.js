@@ -75,10 +75,7 @@ export default function RecipeCard({ recipe }) {
         }
 
         @media (max-width:768px) {
-        .recipe-list {
-          grid-template-columns: 1fr;
-    gap: 20px; 
-    }
+     
     .content {
     top: -20px; /* smaller offset */
     left: 0;
