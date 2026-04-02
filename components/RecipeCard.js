@@ -71,7 +71,9 @@ export default function RecipeCard({ recipe }) {
           display: flex;
           justify-content: flex-end;
         }
-
+.actions a:hover {
+  background: #c21722;
+}
         @media (max-width:768px) {
      
     .content {
