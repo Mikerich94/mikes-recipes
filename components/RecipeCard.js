@@ -31,6 +31,8 @@ export default function RecipeCard({ recipe }) {
     display: 'inline-block',
     borderRadius: '4px'
   }}
+  onMouseEnter={e => e.currentTarget.style.background = '#c21722'}
+  onMouseLeave={e => e.currentTarget.style.background = '#f01b29'}
 >
   Cook this
 </Link>
@@ -71,9 +73,7 @@ export default function RecipeCard({ recipe }) {
           display: flex;
           justify-content: flex-end;
         }
-.actions a:hover {
-  background: #c21722;
-}
+
         @media (max-width:768px) {
      
     .content {
