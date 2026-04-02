@@ -40,7 +40,14 @@ export default function RecipeCard({ recipe }) {
         <style jsx>{`
         .card {
           transform: rotateZ(-1deg);
+          max-width: 100%;
         }
+          .featured,
+.content {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box; 
+}
         .content {
           background: #fff;
           box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
@@ -48,6 +55,7 @@ export default function RecipeCard({ recipe }) {
           position: relative;
           top: -40px;
           left: -10px;
+          max-width:510px;
         }
         .info {
           padding: 16px;
@@ -65,6 +73,22 @@ export default function RecipeCard({ recipe }) {
           display: flex;
           justify-content: flex-end;
         }
+
+        @media (max-width:768px) {
+        .recipe-list {
+          grid-template-columns: 1fr;
+    gap: 20px; 
+    }
+    .content {
+    top: -20px; /* smaller offset */
+    left: 0;
+  }
+
+  .featured img {
+    max-width: 100%; 
+    height: auto;
+  }
+    }
    
       `}</style>
         </div>
