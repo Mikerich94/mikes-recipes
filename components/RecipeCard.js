@@ -66,6 +66,12 @@ export default function RecipeCard({ recipe }) {
           display: flex;
           justify-content: flex-end;
         }
+
+        @media (max-width:768px) {
+        .recipe-list {
+          grid-template-columns: 1fr;
+    gap: 20px; 
+    }}
    
       `}</style>
         </div>
