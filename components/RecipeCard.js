@@ -48,6 +48,7 @@ export default function RecipeCard({ recipe }) {
           position: relative;
           top: -40px;
           left: -10px;
+          max-width:510px;
         }
         .info {
           padding: 16px;
