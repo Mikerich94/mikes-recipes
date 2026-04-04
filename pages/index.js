@@ -19,6 +19,11 @@ export async function getStaticProps() {
 export default function Recipes({ recipes }) {
   console.log(recipes);
   return (
+     <Head>
+        <title>Mike's Recipes</title>
+        <meta name="description" content="Browse delicious recipes" />
+      </Head>
+
     <div className="recipe-list">
     {recipes.map(recipe => (
       <RecipeCard key={recipe.sys.id} recipe={recipe} />
