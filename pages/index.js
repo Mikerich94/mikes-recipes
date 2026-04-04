@@ -1,5 +1,7 @@
+import Head from 'next/head'
 import { createClient } from 'contentful'
 import RecipeCard from '../components/RecipeCard'
+
 export async function getStaticProps() {
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
@@ -7,7 +9,7 @@ export async function getStaticProps() {
   })
 
   const res = await client.getEntries({ content_type: 'recipe' })
-  
+
   return {
     props: {
       recipes: res.items
@@ -17,25 +19,26 @@ export async function getStaticProps() {
 }
 
 export default function Recipes({ recipes }) {
-  console.log(recipes);
   return (
-     <Head>
-    <title>{`Mike's Recipes`}</title>
+    <>
+      <Head>
+        <title>{`Mike's Recipes`}</title>
         <meta name="description" content="Browse delicious recipes" />
       </Head>
 
-    <div className="recipe-list">
-    {recipes.map(recipe => (
-      <RecipeCard key={recipe.sys.id} recipe={recipe} />
-    ))}
+      <div className="recipe-list">
+        {recipes.map(recipe => (
+          <RecipeCard key={recipe.sys.id} recipe={recipe} />
+        ))}
 
-    <style jsx>{`
-      .recipe-list {
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px 60px;
-    `}
-      </style>
-    </div>
+        <style jsx>{`
+          .recipe-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 60px;
+          }
+        `}</style>
+      </div>
+    </>
   )
 }
