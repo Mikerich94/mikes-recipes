@@ -20,7 +20,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: true,
+    fallback: true, // can be 'blocking' if you want server-side generation for missing paths
   }
 }
 
@@ -46,6 +46,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function RecipeDetails({ recipe }) {
+  // Handle fallback pages gracefully
   if (!recipe) return <Skeleton />
 
   const { featuredImage, title, cookingTime, ingredients, method } = recipe.fields
@@ -53,7 +54,7 @@ export default function RecipeDetails({ recipe }) {
   return (
     <>
       <Head>
-       <title>{`${title} | Mike's Recipes`}</title>
+        <title>{`${title} | Mike's Recipes`}</title>
         <meta name="description" content={`Recipe for ${title}`} />
       </Head>
 
@@ -63,11 +64,17 @@ export default function RecipeDetails({ recipe }) {
             src={'https:' + featuredImage.fields.file.url}
             width={featuredImage.fields.file.details.image.width}
             height={featuredImage.fields.file.details.image.height}
-            style={{ objectFit: 'cover', width: '100%', height: 'auto', maxHeight: '375px' }}
+            style={{
+              objectFit: 'cover',
+              width: '100%',
+              height: 'auto',
+              maxHeight: '375px',
+            }}
             alt={title}
           />
           <h2>{title}</h2>
         </div>
+
         <div className="info">
           <p>Takes about {cookingTime} minutes to cook.</p>
           <h3>Ingredients:</h3>
@@ -75,15 +82,18 @@ export default function RecipeDetails({ recipe }) {
             <span key={ing}>{ing}</span>
           ))}
         </div>
+
         <div className="method">
           <h3>Method:</h3>
           <div>{documentToReactComponents(method)}</div>
         </div>
+
         <style jsx>{`
           h2,
           h3 {
             text-transform: uppercase;
           }
+
           .banner h2 {
             margin: 0;
             background: #fff;
@@ -95,12 +105,15 @@ export default function RecipeDetails({ recipe }) {
             transform: rotateZ(-1deg);
             box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
           }
+
           .info p {
             margin: 0;
           }
+
           .info span::after {
             content: ', ';
           }
+
           .info span:last-child::after {
             content: '.';
           }
