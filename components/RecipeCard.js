@@ -62,6 +62,7 @@ export default function RecipeCard({ recipe }) {
         }
         .info h4 {
           margin: 4px 0;
+          min-height:55px;
           text-transform: uppercase;
         }
         .info p {
