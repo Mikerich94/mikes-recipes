@@ -51,11 +51,6 @@ export default function RecipeCard({ recipe }) {
   max-width: 100%;
   box-sizing: border-box; 
 }
-.recipe-list {
- display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
-  }
 
         .content {
         flex:1;
@@ -86,10 +81,7 @@ export default function RecipeCard({ recipe }) {
         }
 
         @media (max-width:768px) {
-        .recipe-list {
-          grid-template-columns: 1fr;
-    gap: 20px; 
-    }
+   
     .content {
     top: -20px; /* smaller offset */
     left: 0;
