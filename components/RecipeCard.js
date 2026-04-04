@@ -54,6 +54,8 @@ export default function RecipeCard({ recipe }) {
 
         .content {
         flex:1;
+        display:flex;
+        flex-direction:column;
           background: #fff;
           box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
           margin: 0;
