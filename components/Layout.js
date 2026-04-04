@@ -1,15 +1,19 @@
 import Link from 'next/link'
 
+export const metadata = {
+  title: "Mike's Recipes",
+};
+
 export default function Layout({ children }) {
   return (
     <div className="layout">
       <header>
         <Link href="/">
-            <h1>
-              <span>Mike's</span>
-              <span>Recipes</span>
-            </h1>
-            <h2>Simple, delicious, easy.</h2>
+          <h1>
+            <span>Mike's</span>
+            <span>Recipes</span>
+          </h1>
+          <h2>Simple, delicious, easy.</h2>
         </Link>
       </header>
 
