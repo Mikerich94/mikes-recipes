@@ -39,6 +39,9 @@ export default function RecipeCard({ recipe }) {
 
         <style jsx>{`
         .card {
+          height: 100%;
+  display: flex;
+  flex-direction: column;
           transform: rotateZ(-1deg);
           max-width: 100%;
         }
@@ -48,7 +51,14 @@ export default function RecipeCard({ recipe }) {
   max-width: 100%;
   box-sizing: border-box; 
 }
+.recipe-list {
+ display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  }
+
         .content {
+        flex:1;
           background: #fff;
           box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
           margin: 0;
@@ -70,7 +80,7 @@ export default function RecipeCard({ recipe }) {
           color: #777;
         }
         .actions {
-          margin-top: 20px;
+          margin-top: auto;
           display: flex;
           justify-content: flex-end;
         }
